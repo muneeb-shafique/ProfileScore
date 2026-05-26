@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProfileScore | Elite AI LinkedIn Optimization</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-mesh">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" data-aos="fade-down" data-aos-duration="1000">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fab fa-linkedin-in"></i></div>
+                <span class="logo-text">ProfileScore</span>
+            </div>
+            <a href="#analyzer" class="nav-btn">Start Analysis</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+            <div class="badge">✨ Powered by Gemini AI</div>
+            <h1 class="hero-title">Dominate Your Industry with an <span class="gradient-text">Elite Profile</span></h1>
+            <p class="hero-subtitle">Our advanced AI instantly analyzes your LinkedIn, scoring your professional footprint and rewriting your content to attract top recruiters and high-value opportunities.</p>
+            <div class="hero-cta">
+                <a href="#analyzer" class="btn btn-primary glow-effect">
+                    Analyze My Profile <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num">5x</span>
+                    <span class="stat-label">More Profile Views</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label">AI Accuracy</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num">#1</span>
+                    <span class="stat-label">Career Catalyst</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-visual" data-aos="fade-left" data-aos-duration="1500">
+            <div class="floating-card score-card-preview">
+                <div class="radial-ring">98</div>
+                <div class="card-text">Top 1% Profile</div>
+            </div>
+            <div class="floating-card stat-card-preview delay-1">
+                <i class="fas fa-chart-line"></i>
+                <div>Visibility Increased</div>
+            </div>
+            <div class="floating-card text-card-preview delay-2">
+                <div class="skeleton-line w-full"></div>
+                <div class="skeleton-line w-3/4"></div>
+                <div class="skeleton-line w-1/2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Analyzer Section -->
+    <main id="analyzer" class="analyzer-wrapper">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            
+            <!-- Input Container -->
+            <section class="glass-panel main-panel" id="input-section">
+                <div class="panel-header">
+                    <h2>Submit Your Profile</h2>
+                    <p>Choose how you want our AI to read your professional data.</p>
+                </div>
+
+                <div class="input-tabs">
+                    <button class="tab-btn active" data-tab="manual">
+                        <i class="fas fa-keyboard"></i> Manual Entry
+                    </button>
+                    <button class="tab-btn" data-tab="url">
+                        <i class="fas fa-link"></i> Auto-Scrape URL
+                    </button>
+                    <button class="tab-btn" data-tab="html">
+                        <i class="fas fa-code"></i> Paste HTML
+                    </button>
+                </div>
+                
+                <!-- Manual Entry Form -->
+                <div class="tab-content active" id="manual-tab">
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label for="f-headline">Headline</label>
+                            <input type="text" id="f-headline" placeholder="e.g. Senior Software Engineer | Building Scalable Systems...">
+                        </div>
+                        <div class="input-group full-width">
+                            <label for="f-summary">About / Summary</label>
+                            <textarea id="f-summary" rows="3" placeholder="Tell us about your professional journey..."></textarea>
+                        </div>
+                        <div class="input-group full-width">
+                            <label for="f-experience">Experience (Recent Roles)</label>
+                            <textarea id="f-experience" rows="4" placeholder="Paste your top experiences, responsibilities, and achievements..."></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="f-skills">Skills</label>
+                            <input type="text" id="f-skills" placeholder="e.g. Python, React, AWS, Leadership">
+                        </div>
+                        <div class="input-group">
+                            <label for="f-education">Education</label>
+                            <input type="text" id="f-education" placeholder="e.g. B.S. Computer Science, University of X">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- URL Entry Form -->
+                <div class="tab-content" id="url-tab">
+                    <div class="warning-banner">
+                        <div class="warning-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="warning-text">
+                            <strong>Scraping Disclaimer</strong>
+                            <p>LinkedIn actively blocks bots. We use advanced headers, but if it fails, please use Manual Entry.</p>
+                        </div>
+                    </div>
+                    <div class="input-group full-width url-input-wrapper">
+                        <label for="profile-url">LinkedIn Profile URL</label>
+                        <div class="url-bar">
+                            <div class="url-icon"><i class="fab fa-linkedin"></i></div>
+                            <input type="url" id="profile-url" placeholder="https://www.linkedin.com/in/username">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HTML Entry Form -->
+                <div class="tab-content" id="html-tab">
+                    <div class="warning-banner" style="border-left-color: var(--success); background: rgba(0, 255, 157, 0.1);">
+                        <div class="warning-icon" style="color: var(--success);"><i class="fas fa-lightbulb"></i></div>
+                        <div class="warning-text">
+                            <strong style="color: var(--success);">100% Reliable Method</strong>
+                            <p>Go to your LinkedIn profile, right click -> <strong>View Page Source</strong>, Select All (Ctrl+A), Copy, and Paste here.</p>
+                        </div>
+                    </div>
+                    <div class="input-group full-width">
+                        <label for="profile-html">Raw HTML Code</label>
+                        <textarea id="profile-html" rows="8" placeholder="<!DOCTYPE html>..."></textarea>
+                    </div>
+                </div>
+
+                <div class="action-footer">
+                    <button class="btn btn-primary btn-large glow-effect" id="analyze-btn">
+                        <i class="fas fa-magic"></i> Generate AI Analysis
+                    </button>
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <section class="glass-panel loading-panel hidden" id="loading-section">
+                <div class="scanner-container">
+                    <div class="scanner-box">
+                        <div class="scanner-line"></div>
+                        <i class="fab fa-linkedin-in scanner-icon"></i>
+                    </div>
+                </div>
+                <h3 class="loading-title">Neural Engine Analyzing</h3>
+                <p class="loading-subtitle">Deconstructing your professional footprint...</p>
+                <div class="progress-container">
+                    <div class="progress-bar-inner" id="loading-progress"></div>
+                </div>
+                <div class="status-messages" id="status-text">Connecting to Gemini AI...</div>
+            </section>
+
+            <!-- Results Dashboard -->
+            <section class="results-dashboard hidden" id="results-section">
+                
+                <!-- Score Overview -->
+                <div class="dashboard-header glass-panel" data-aos="zoom-in">
+                    <div class="score-display">
+                        <div class="circular-chart">
+                            <svg viewBox="0 0 36 36" class="circular-chart-svg">
+                                <path class="circle-bg"
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                                <path class="circle-path" id="score-circle-path"
+                                    stroke-dasharray="0, 100"
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                                <text x="18" y="20.35" class="score-text" id="final-score-text">0</text>
+                            </svg>
+                        </div>
+                        <div class="score-info">
+                            <h2 class="score-title">Profile Power Score</h2>
+                            <p class="score-evaluation" id="score-evaluation">Analyzing...</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" id="reset-btn">
+                        <i class="fas fa-redo"></i> New Analysis
+                    </button>
+                </div>
+
+                <!-- Sections Grid -->
+                <div class="sections-grid" id="sections-container">
+                    <!-- Cards injected here via JS -->
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- Template for Section Result Card -->
+    <template id="section-template">
+        <div class="result-card glass-panel" data-aos="fade-up">
+            <div class="rc-header">
+                <div class="rc-title-area">
+                    <div class="rc-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3 class="rc-title">Section Name</h3>
+                </div>
+                <div class="rc-score-badge">
+                    <span class="rc-score-value">0</span>/100
+                </div>
+            </div>
+            
+            <div class="rc-progress-track">
+                <div class="rc-progress-fill"></div>
+            </div>
+
+            <div class="ai-feedback-box">
+                <div class="feedback-header">
+                    <i class="fas fa-brain text-gradient"></i> AI Strategy Insight
+                </div>
+                <p class="feedback-content"></p>
+            </div>
+
+            <div class="comparison-ui">
+                <div class="comp-col original-box">
+                    <div class="comp-header">
+                        <span class="tag tag-red">Original</span>
+                    </div>
+                    <div class="comp-text orig-content"></div>
+                </div>
+                <div class="comp-col improved-box">
+                    <div class="comp-header">
+                        <span class="tag tag-green">AI Optimized</span>
+                        <button class="copy-action" title="Copy Text"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <div class="comp-text impr-content"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
